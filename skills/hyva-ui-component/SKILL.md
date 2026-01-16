@@ -19,7 +19,9 @@ ls vendor/hyva-themes/hyva-ui/components/ 2>/dev/null
 
 **If NOT found**, offer options: (A) User provides custom extraction path, (B) `composer require --dev hyva-themes/hyva-ui`, (C) Download from https://hyva.io/my-account/my-downloads/
 
-After install, refresh catalog: `.claude/skills/hyva-ui-component/scripts/refresh_catalog.sh {hyva_ui_path} .claude/skills/hyva-ui-component/references/components.md`
+After install, refresh catalog: `<skill_path>/scripts/refresh_catalog.sh {hyva_ui_path} <skill_path>/references/components.md`
+
+Where `<skill_path>` is the directory containing this SKILL.md file.
 
 ## Step 1: Identify Theme Path
 
@@ -128,7 +130,7 @@ If XML configuration was added to `{theme_path}/etc/view.xml`, parse the XML blo
 
 ```bash
 # Extract the XML config block from README and parse it
-php .claude/skills/hyva-ui-component/scripts/parse_readme_xml.php --format=table < xml_block.txt
+php <skill_path>/scripts/parse_readme_xml.php --format=table < xml_block.txt
 ```
 
 The table shows each option with columns:

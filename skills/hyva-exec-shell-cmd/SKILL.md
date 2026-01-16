@@ -16,8 +16,10 @@ Other skills should reference this skill when they need to execute commands in t
 Run this detection once at the start of any skill that needs to execute shell commands:
 
 ```bash
-.claude/skills/hyva-exec-shell-cmd/scripts/detect_env.sh [magento_root_path]
+<skill_path>/scripts/detect_env.sh [magento_root_path]
 ```
+
+Where `<skill_path>` is the directory containing this SKILL.md file.
 
 The optional `magento_root_path` argument specifies the Magento installation directory. If omitted, the script uses the current working directory.
 
