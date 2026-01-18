@@ -399,5 +399,6 @@ Placeholders:
 4. **Use meaningful default values** for better merchant experience
 5. **Include design/advanced sections** via includes for consistency
 6. **Validate component names** are snake_case with only lowercase letters, numbers, and underscores
+7. **CRITICAL: Use `default_value` key, NOT `default`** - The correct JSON key for default values is `default_value` (with underscore), not `default`. Example: `"default_value": "My Title"` ✅, NOT `"default": "My Title"` ❌
 
 <!-- Copyright © Hyvä Themes https://hyva.io. All rights reserved. Licensed under OSL -->
