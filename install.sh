@@ -4,9 +4,9 @@
 # Installs Hyva development skills for AI coding assistants
 #
 # Usage:
-#   curl -fsSL https://gitlab.hyva.io/hyva-internal/hyva-ai-tools/-/raw/main/install.sh | sh -s claude
-#   curl -fsSL https://gitlab.hyva.io/hyva-internal/hyva-ai-tools/-/raw/main/install.sh | sh -s gemini
-#   curl -fsSL https://gitlab.hyva.io/hyva-internal/hyva-ai-tools/-/raw/main/install.sh | sh -s codex
+#   curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s claude
+#   curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s gemini
+#   curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s codex
 #
 # Copyright (c) Hyva Themes https://hyva.io. All rights reserved.
 # Licensed under the OSL-3.0
@@ -14,7 +14,7 @@
 set -e
 
 # Configuration
-REPO_URL="${HYVA_SKILLS_REPO_URL:-https://gitlab.hyva.io/hyva-internal/hyva-ai-tools.git}"
+REPO_URL="${HYVA_SKILLS_REPO_URL:-https://github.com/hyva-themes/hyva-ai-tools.git}"
 BRANCH="${HYVA_SKILLS_BRANCH:-main}"
 
 # Colors for output
@@ -60,9 +60,9 @@ usage() {
     echo "  gemini    Install skills for Gemini (.gemini/skills/)"
     echo ""
     echo "Examples:"
-    echo "  curl -fsSL https://gitlab.hyva.io/hyva-internal/hyva-ai-tools/-/raw/main/install.sh | sh -s claude"
-    echo "  curl -fsSL https://gitlab.hyva.io/hyva-internal/hyva-ai-tools/-/raw/main/install.sh | sh -s codex"
-    echo "  curl -fsSL https://gitlab.hyva.io/hyva-internal/hyva-ai-tools/-/raw/main/install.sh | sh -s gemini"
+    echo "  curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s claude"
+    echo "  curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s codex"
+    echo "  curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s gemini"
     echo ""
     echo "Environment variables:"
     echo "  HYVA_SKILLS_REPO_URL   Custom repository URL"

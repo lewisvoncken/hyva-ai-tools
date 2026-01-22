@@ -1,45 +1,49 @@
 # Hyva AI Skills
 
-AI-powered skills for Magento 2 development with Hyva Theme. These skills extend AI coding assistants with specialized knowledge for creating Hyva themes, modules, and CMS components.
+AI-powered skills for Magento 2 development with Hyva Theme. These skills extend AI coding assistants with specialized
+knowledge for creating Hyva themes, modules, and CMS components.
 
 ## Available Skills
 
-| Skill | Description |
-|-------|-------------|
-| [hyva-alpine-component](skills/hyva-alpine-component/) | Write CSP-compliant Alpine.js components for Hyvä themes following best practices |
-| [hyva-child-theme](skills/hyva-child-theme/) | Create a Hyva child theme with proper directory structure, Tailwind CSS configuration, and theme inheritance |
-| [hyva-cms-component](skills/hyva-cms-component/) | Create custom Hyva CMS components with field presets, variant support, and PHTML templates |
-| [hyva-compile-tailwind-css](skills/hyva-compile-tailwind-css/) | Utility skill to compile Tailwind CSS for Hyva themes |
-| [hyva-create-module](skills/hyva-create-module/) | Scaffold new Magento 2 modules in app/code/ |
-| [hyva-exec-shell-cmd](skills/hyva-exec-shell-cmd/) | Utility skill to detect development environment (Warden, docker-magento, local) and execute commands with appropriate wrappers |
-| [hyva-render-media-image](skills/hyva-render-media-image/) | Generate responsive `<picture>` elements using the Hyva Media view model |
-| [hyva-theme-list](skills/hyva-theme-list/) | List all Hyva theme paths in a Magento 2 project |
-| [hyva-ui-component](skills/hyva-ui-component/) | Install Hyva UI template-based components (headers, footers, galleries, etc.) to themes |
+| Skill                                                          | Description                                                                                                                     |
+|----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| [hyva-alpine-component](skills/hyva-alpine-component/)         | Write CSP-compliant Alpine.js components for Hyvä themes following best practices                                               |
+| [hyva-child-theme](skills/hyva-child-theme/)                   | Create a Hyva child theme with proper directory structure, Tailwind CSS configuration, and theme inheritance                    |
+| [hyva-cms-component](skills/hyva-cms-component/)               | Create custom Hyva CMS components with field presets, variant support, and PHTML templates                                      |
+| [hyva-cms-components-dump](skills/hyva-cms-components-dump/)   | Dump combined JSON of all available Hyvä CMS components from active modules                                                     |
+| [hyva-compile-tailwind-css](skills/hyva-compile-tailwind-css/) | Utility skill to compile Tailwind CSS for Hyva themes                                                                           |
+| [hyva-create-module](skills/hyva-create-module/)               | Scaffold new Magento 2 modules in app/code/                                                                                     |
+| [hyva-exec-shell-cmd](skills/hyva-exec-shell-cmd/)             | Utility skill to detect development environment (Warden, docker-magento, local) and execute commands with appropriate wrappers  |
+| [hyva-render-media-image](skills/hyva-render-media-image/)     | Generate responsive `<picture>` elements using the Hyva Media view model                                                        |
+| [hyva-theme-list](skills/hyva-theme-list/)                     | List all Hyva theme paths in a Magento 2 project                                                                                |
+| [hyva-ui-component](skills/hyva-ui-component/)                 | Install Hyva UI template-based components (headers, footers, galleries, etc.) to themes                                         |
 
 "Utility skills" are mainly intended to be invoked by other skills, but can of course also be used directly.
 
 ## Installation
 
+Always install all skills together, as they often refer to each other.
+
 ### Quick Install
 
 ```bash
 # For Claude Code
-curl -fsSL https://gitlab.hyva.io/hyva-internal/hyva-ai-tools/-/raw/main/install.sh | sh -s claude
+curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s claude
 
 # For Codex
-curl -fsSL https://gitlab.hyva.io/hyva-internal/hyva-ai-tools/-/raw/main/install.sh | sh -s codex
+curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s codex
 
 # For Gemini
-curl -fsSL https://gitlab.hyva.io/hyva-internal/hyva-ai-tools/-/raw/main/install.sh | sh -s gemini
+curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s gemini
 ```
 
 ### Manual Installation
 
 1. Clone or download this repository
 2. Copy the skill directories to your project:
-   - **Claude Code**: `.claude/skills/`
-   - **Codex**: `.codex/skills/`
-   - **Gemini**: `.gemini/skills/`
+    - **Claude Code**: `.claude/skills/`
+    - **Codex**: `.codex/skills/`
+    - **Gemini**: `.gemini/skills/`
 
 ## Usage
 
