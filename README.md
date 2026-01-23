@@ -7,7 +7,7 @@ knowledge for creating Hyva themes, modules, and CMS components.
 
 | Skill                                                          | Description                                                                                                                     |
 |----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| [hyva-alpine-component](skills/hyva-alpine-component/)         | Write CSP-compliant Alpine.js components for Hyvä themes following best practices                                               |
+| [hyva-alpine-component](skills/hyva-alpine-component/)         | Write CSP-compatible Alpine.js components for Hyvä themes following best practices                                               |
 | [hyva-child-theme](skills/hyva-child-theme/)                   | Create a Hyva child theme with proper directory structure, Tailwind CSS configuration, and theme inheritance                    |
 | [hyva-cms-component](skills/hyva-cms-component/)               | Create custom Hyva CMS components with field presets, variant support, and PHTML templates                                      |
 | [hyva-cms-components-dump](skills/hyva-cms-components-dump/)   | Dump combined JSON of all available Hyvä CMS components from active modules                                                     |

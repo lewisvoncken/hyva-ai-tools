@@ -1,13 +1,13 @@
 ---
 name: hyva-alpine-component
-description: Write CSP-compliant Alpine.js components for Hyvä themes in Magento 2. This skill should be used when the user wants to create Alpine components, add interactivity to Hyvä templates, write JavaScript for Hyvä themes, or needs help with Alpine.js patterns that work with Content Security Policy. Trigger phrases include "create alpine component", "add interactivity", "alpine for hyva", "x-data component", "csp compliant javascript".
+description: Write CSP-compatible Alpine.js components for Hyvä themes in Magento 2. This skill should be used when the user wants to create Alpine components, add interactivity to Hyvä templates, write JavaScript for Hyvä themes, or needs help with Alpine.js patterns that work with Content Security Policy. Trigger phrases include "create alpine component", "add interactivity", "alpine for hyva", "x-data component", "csp compatibility", "csp compliant javascript".
 ---
 
 # Hyvä Alpine Component
 
 ## Overview
 
-This skill provides guidance for writing CSP-compliant Alpine.js components in Hyvä themes. Alpine CSP is a specialized Alpine.js build that operates without the `unsafe-eval` CSP directive, which is required for PCI-DSS 4.0 compliance on payment-related pages (mandatory from April 1, 2025).
+This skill provides guidance for writing CSP-compatible Alpine.js components in Hyvä themes. Alpine CSP is a specialized Alpine.js build that operates without the `unsafe-eval` CSP directive, which is required for PCI-DSS 4.0 compliance on payment-related pages (mandatory from April 1, 2025).
 
 **Key principle:** CSP-compatible code functions in both standard and Alpine CSP builds. Write all Alpine code using CSP patterns for future-proofing.
 
