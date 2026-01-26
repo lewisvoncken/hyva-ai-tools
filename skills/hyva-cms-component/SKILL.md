@@ -50,8 +50,8 @@ For custom fields, iterate through each field asking:
 2. Field type (see `references/field-types.md`)
 3. Label
 4. Default value (optional)
-5. Required? (yes/no)
-6. Any additional attributes
+5. Required? (yes/no) - Note: This will be added as `attributes.required`, NOT as a direct field property
+6. Any additional attributes (these go in the `attributes` object)
 
 ### Step 4: Variant Support
 
@@ -130,6 +130,84 @@ Key properties: `label` (required), `category`, `template`, `icon`, `children`, 
 **Invalid properties that will cause schema errors:**
 - `hidden` - Does not exist. Use `require_parent: true` for child-only components, or `disabled: true`
 - Any property not listed in the schema reference
+
+### Children Configuration (CRITICAL)
+
+**IMPORTANT:** `children` is a ROOT-LEVEL component property, NOT a field type within `content`, `design`, or `advanced`.
+
+**INCORRECT ❌:**
+```json
+{
+    "my_component": {
+        "content": {
+            "items": {
+                "type": "children",
+                "label": "Items"
+            }
+        }
+    }
+}
+```
+
+**CORRECT ✅:**
+```json
+{
+    "my_component": {
+        "label": "My Component",
+        "children": {
+            "config": {
+                "accepts": ["child_component"],
+                "max_children": 10
+            }
+        },
+        "content": {
+            "title": {
+                "type": "text",
+                "label": "Title"
+            }
+        }
+    }
+}
+```
+
+In templates, access children via `$block->getData('children')`, NOT via a custom field name.
+
+### Field Validation (CRITICAL)
+
+**IMPORTANT:** Field validation attributes like `required` must be placed in the `attributes` object, NOT as direct field properties.
+
+**INCORRECT ❌:**
+```json
+{
+    "title": {
+        "type": "text",
+        "label": "Title",
+        "required": true
+    }
+}
+```
+
+**CORRECT ✅:**
+```json
+{
+    "title": {
+        "type": "text",
+        "label": "Title",
+        "attributes": {
+            "required": true
+        }
+    }
+}
+```
+
+Other validation attributes that go in `attributes`:
+- `required` (boolean)
+- `minlength` / `maxlength` (string)
+- `min` / `max` (for numbers)
+- `pattern` (regex string)
+- `placeholder` (string)
+- `comment` (help text)
+- Custom data attributes for validation messages
 
 ### Child-Only Components
 
@@ -324,6 +402,16 @@ $children = $block->getData('children') ?: [];
 
 ## Resources
 
+### references/critical-patterns.md
+
+**READ THIS FIRST** - Essential patterns and common mistakes including:
+- Correct `children` configuration (root-level vs field type)
+- Proper field validation with `attributes`
+- Default value syntax
+- Quick checklist before generating components
+
+Read this file before generating any component to avoid common errors.
+
 ### references/example-component.md
 
 Complete end-to-end example showing a Feature Card component with:
@@ -400,5 +488,7 @@ Placeholders:
 5. **Include design/advanced sections** via includes for consistency
 6. **Validate component names** are snake_case with only lowercase letters, numbers, and underscores
 7. **CRITICAL: Use `default_value` key, NOT `default`** - The correct JSON key for default values is `default_value` (with underscore), not `default`. Example: `"default_value": "My Title"` ✅, NOT `"default": "My Title"` ❌
+8. **CRITICAL: `children` is a root-level property, NOT a field type** - Never use `"type": "children"` in content/design/advanced. Declare `children` at component root level. Access via `$block->getData('children')` in templates.
+9. **CRITICAL: Validation goes in `attributes`, NOT as direct properties** - Use `"attributes": {"required": true}` ✅, NOT `"required": true` ❌. All HTML5 validation attributes (required, minlength, maxlength, pattern, min, max) must be inside the `attributes` object.
 
 <!-- Copyright © Hyvä Themes https://hyva.io. All rights reserved. Licensed under OSL -->

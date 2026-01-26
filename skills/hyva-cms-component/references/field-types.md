@@ -2,6 +2,8 @@
 
 Complete reference for all field types supported in Hyvä CMS component declarations.
 
+**IMPORTANT:** This document covers field types used within `content`, `design`, and `advanced` sections. The `children` property is NOT a field type - it is a root-level component property. See the main SKILL.md for children configuration.
+
 ## Field Structure
 
 Every field in `content`, `design`, or `advanced` sections follows this structure:
@@ -369,21 +371,43 @@ Product selector (by SKU or category).
 
 ### children
 
-Container for child components.
+**IMPORTANT:** `children` is NOT a field type. It is a root-level component property.
 
+Do NOT use this in `content`, `design`, or `advanced` sections:
+
+**INCORRECT ❌:**
 ```json
 {
-    "items": {
-        "type": "children",
-        "label": "Items",
-        "config": {
-            "accepts": ["button", "text"],
-            "excludes": ["slider"],
-            "max_children": 10
+    "my_component": {
+        "content": {
+            "items": {
+                "type": "children",
+                "label": "Items"
+            }
         }
     }
 }
 ```
+
+Instead, declare `children` at the component root level:
+
+**CORRECT ✅:**
+```json
+{
+    "my_component": {
+        "label": "My Component",
+        "children": {
+            "config": {
+                "accepts": ["button", "text"],
+                "excludes": ["slider"],
+                "max_children": 10
+            }
+        }
+    }
+}
+```
+
+In templates, access children data via `$block->getData('children')`. See the main SKILL.md for complete examples.
 
 ## Conditional Visibility
 

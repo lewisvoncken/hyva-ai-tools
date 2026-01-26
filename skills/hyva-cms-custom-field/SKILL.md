@@ -127,7 +127,7 @@ Add registration to `etc/adminhtml/di.xml`:
 
 ### Step 7: Register Handler Modal (if needed)
 
-For modal-based handlers only, create or update `view/adminhtml/layout/liveview_editor_index.xml`:
+For modal-based handlers only, create or update `view/adminhtml/layout/liveview_editor.xml`:
 
 ```xml
 <?xml version="1.0"?>
@@ -374,23 +374,5 @@ Based on built-in Hyvä CMS handler implementations:
      ```
    - ❌ Incorrect: `json_decode($fieldValue)` without type checking (fails if value is already an array)
    - ❌ Incorrect: Using array directly in `value` attribute without JSON-encoding first
-
-## Advanced Topics
-
-### Custom Validation Rules
-
-For validation beyond HTML5 attributes, implement server-side validation in a Magewire component validator or add custom JavaScript validation in the field template.
-
-### Dynamic Field Options
-
-Fetch options from Magento APIs, external services, or ViewModels. Field templates have full access to Magento's backend environment.
-
-### Complex Data Structures
-
-Field handlers can store complex JSON structures. Ensure proper encoding/decoding in both field template and handler modal.
-
-### Reusable Field Handlers
-
-Create field handlers that can be configured via component configuration attributes for reusability across multiple components.
 
 <!-- Copyright © Hyvä Themes https://hyva.io. All rights reserved. Licensed under OSL -->

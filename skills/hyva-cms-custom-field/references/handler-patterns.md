@@ -628,7 +628,7 @@ function initProductSelectHandler() {
 **Step 4: Register Handler Modal**
 
 ```xml
-<!-- view/adminhtml/layout/liveview_editor_index.xml -->
+<!-- view/adminhtml/layout/liveview_editor.xml -->
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
