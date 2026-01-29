@@ -1,6 +1,6 @@
 ---
 name: hyva-exec-shell-cmd
-description: Utility skill to detect Magento development environment and determine command wrapper. This skill should be used by other skills that need to execute shell commands in the Magento environment. It detects Warden, docker-magento, and local environments and provides the appropriate command wrapper.
+description: Utility skill to detect Magento development environment and determine command wrapper. This skill should be used by other skills that need to execute shell commands in the Magento environment. It detects Warden, docker-magento, DDEV, and local environments and provides the appropriate command wrapper.
 ---
 
 # Execute Shell Commands in Magento Environment
@@ -25,7 +25,7 @@ Where `<skill_path>` is the directory containing this SKILL.md file (e.g., `.cla
 
 The optional `magento_root_path` argument specifies the Magento installation directory. If omitted, the script uses the current working directory.
 
-Output: `warden`, `docker-magento`, or `local`
+Output: `warden`, `docker-magento`, `ddev`, or `local`
 
 ## Step 2: Apply Command Wrapper
 
@@ -35,6 +35,7 @@ Based on detected environment, wrap commands as follows:
 |-------------|-----------------|-------------|
 | Warden | `warden env exec -T php-fpm bash -c "<command>"` | Docker environment managed by Warden |
 | docker-magento | `bin/clinotty bash -c "<command>"` | Mark Shust's docker-magento setup |
+| DDEV | `ddev exec <command>` | DDEV containerized environment |
 | Local | Run `<command>` directly | Native environment without containers |
 
 ## Examples
@@ -47,6 +48,9 @@ warden env exec -T php-fpm bash -c "bin/magento cache:clean"
 
 # docker-magento
 bin/clinotty bash -c "bin/magento cache:clean"
+
+# DDEV
+ddev exec bin/magento cache:clean
 
 # Local
 bin/magento cache:clean
@@ -61,6 +65,9 @@ warden env exec -T php-fpm bash -c "cd vendor/hyva-themes/magento2-default-theme
 # docker-magento
 bin/clinotty bash -c "cd vendor/hyva-themes/magento2-default-theme/web/tailwind && npm run build"
 
+# DDEV
+ddev exec bash -c "vendor/hyva-themes/magento2-default-theme/web/tailwind && npm run build"
+
 # Local
 cd vendor/hyva-themes/magento2-default-theme/web/tailwind && npm run build
 ```
@@ -73,6 +80,7 @@ Some commands run on the host system and should NOT be wrapped:
 - `git` commands
 - File operations on the host filesystem (`ls`, `find`, `cp` for files accessible from host)
 - `warden` CLI commands
+- `ddev` CLI commands
 
 ## Integration Pattern
 
@@ -83,4 +91,4 @@ Skills that need to execute commands should:
 3. Store the wrapper pattern for use throughout the skill
 4. Apply the wrapper to all container commands per Step 2
 
-<!-- Copyright © Hyvä Themes https://hyva.io. All rights reserved. Licensed under OSL -->
+<!-- Copyright © Hyvä Themes https://hyva.io. All rights reserved. Licensed under OSL 3.0 -->
