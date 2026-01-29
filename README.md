@@ -34,14 +34,14 @@ curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/head
 # For Codex
 curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s codex
 
+# For GitHub Copilot
+curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s copilot
+
 # For Cursor
 curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s cursor
 
 # For Gemini
 curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s gemini
-
-# For GitHub Copilot
-curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s copilot
 
 # For OpenCode
 curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s opencode
@@ -53,9 +53,9 @@ curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/head
 2. Copy the skill directories to your project:
     - **Claude Code**: `.claude/skills/`
     - **Codex**: `.codex/skills/`
+    - **GitHub Copilot**: `.copilot/skills/`
     - **Cursor**: `.cursor/skills/`
     - **Gemini**: `.gemini/skills/`
-    - **GitHub Copilot**: `.copilot/skills/`
     - **OpenCode**: `.opencode/skills/`
 
 ## Usage
