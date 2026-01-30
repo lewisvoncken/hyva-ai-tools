@@ -6,6 +6,7 @@
 # Usage:
 #   curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s claude
 #   curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s codex
+#   curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s copilot
 #   curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s cursor
 #   curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s gemini
 #   curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s opencode
@@ -59,6 +60,7 @@ usage() {
     echo "Platforms:"
     echo "  claude    Install skills for Claude Code (.claude/skills/)"
     echo "  codex     Install skills for Codex (.codex/skills/)"
+    echo "  copilot   Install skills for GitHub Copilot (.copilot/skills/)"
     echo "  cursor    Install skills for Cursor (.cursor/skills/)"
     echo "  gemini    Install skills for Gemini (.gemini/skills/)"
     echo "  opencode  Install skills for OpenCode (.opencode/skills/)"
@@ -66,6 +68,7 @@ usage() {
     echo "Examples:"
     echo "  curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s claude"
     echo "  curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s codex"
+    echo "  curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s copilot"
     echo "  curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s cursor"
     echo "  curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s gemini"
     echo "  curl -fsSL https://raw.githubusercontent.com/hyva-themes/hyva-ai-tools/refs/heads/main/install.sh | sh -s opencode"
@@ -84,6 +87,9 @@ get_skills_dir() {
             ;;
         codex)
             echo ".codex/skills"
+            ;;
+        copilot)
+            echo ".github/skills"
             ;;
         cursor)
             echo ".cursor/skills"
